@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8"/>
+		<title>17 Recorrer Documento</title>		
+		
+		<!--Scripts Aca -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js">		
+		</script>
+		<script type="text/javascript">
+			$(document).on("ready",function(){
+				//obtiene el siguiente elemento
+				console.log($('#primero').next().text());
+				
+				//obtenemos el padre
+				console.log($('#hijo').parent().text());
+				
+				//obtenemos el hijo
+				console.log($('#padre').children().text());
+				
+				//obtenemos el o los hermanos (devuelve un array)
+				console.log($('#primero').siblings().text());
+				
+				//each() nos sirve como el ciclo for each
+				$("ul li").each(function(indice,elemento){
+					console.log("El elemento no. "+indice+" contiene este texto: "+$(elemento).text());
+				});				
+				
+			});
+		
+		</script>
+		
+	</head>
+	<body>
+		<div>
+			<article id="padre">
+				Algo
+				<div id="hijo">
+					hijo del article
+				</div>
+			</article>
+		</div>
+		<ul>
+			<li id="primero">Primero</li>
+			<li>Segundo</li>
+			<li>Tercero</li>
+			<li>Cuarto</li>
+		</ul>		
+	</body>
+</html>
